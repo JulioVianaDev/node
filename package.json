@@ -1,0 +1,17 @@
+{
+  "name": "tomate",
+  "version": "1.0.0",
+  "description": "testando o package",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cfonts": "^2.10.1",
+    "inquire": "^0.4.8",
+    "moment": "^2.29.2",
+    "opn": "^6.0.0"
+  }
+}
