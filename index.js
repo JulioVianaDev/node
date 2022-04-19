@@ -1,38 +1,14 @@
-const questions =[
-    "o que eu aprendi hoje",
-    " o que mais me frustrou?",
-    "o que me deixou feliz hoje?",
-    "quantas pessoas eu ajudei hoje",
-]
+const timeOut= 3000
+const finished = ()=>console.log("done")
 
-const ask = (index = 0)=>{
-    process.stdout.write(questions[index] + "\n")
-}
+let timer = setTimeout(finished,timeOut)
 
-const answers = []
-ask()
-process.stdin.on("data",data=>{
-    answers.push(data.toString().trim())
-    if (answers.length< questions.length){
-        ask(answers.length)
-    }else {
-       process.exit()
-    }
-})
+clearTimeout(timer)
 
-process.on('exit',()=>{
-    console.log(`
-    Bacana Tomate
+const timeOut2 = 1000
 
-    O que voce aprendeu hoje foi
-    ${answers[0]}
+const checking = ()=>console.log('checkint')
 
-    o que mais te frustrou foi
-    ${answers[1]}
+let interval = setInterval(checking,timeOut2)
 
-    o que mais te deixou feliz foi
-    ${answers[2]}
-
-    e voce ajudou ${answers[3]} pessoas
-`)
-})
+setTimeout(()=>clearInterval(interval),4000)
