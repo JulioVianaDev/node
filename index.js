@@ -1,14 +1,15 @@
-const timeOut= 3000
-const finished = ()=>console.log("done")
+const { inherits } = require('util')
+const { EventEmitter } = require('events')
 
-let timer = setTimeout(finished,timeOut)
+function Character(name){
+    this.name = name
+}
 
-clearTimeout(timer)
+inherits(Character,EventEmitter)
 
-const timeOut2 = 1000
+const chapolin = new Character('Chapolin');
+chapolin.on('help',()=>console.log(`eu o ${chapolin.name} colorado`))
 
-const checking = ()=>console.log('checkint')
+console.log("oh e agora quem podera me defender?")
 
-let interval = setInterval(checking,timeOut2)
-
-setTimeout(()=>clearInterval(interval),4000)
+chapolin.emit('help')
